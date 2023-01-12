@@ -68,7 +68,7 @@ let accceptData = () => {
 };
 
 function moveLogIn() {
-    location.replace("login.html");
+    location.assign("login.html");
 }
 
 
