@@ -1,0 +1,6 @@
+.error-username,
+.error-password{
+    color: red;
+    font-size: 14.5px;
+    margin-top: 5px;
+}

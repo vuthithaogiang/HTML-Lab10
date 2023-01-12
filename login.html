@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 10 HTML, CSS, JavaScript Tutorial</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha5121ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+        
 </head>
+
 
 <body>
     <div class="containter">
@@ -53,7 +56,7 @@
                 <input type="text" name="username" id="username" placeholder="username">
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-                <div class="error"></div>
+                <div class="error-username"></div>
             </div>
             
             <div>
@@ -62,15 +65,15 @@
                 <input type="password" name="password" id="password" placeholder="password">
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-                <div class="error"></div>
+                <div class="error-password"></div>
             </div>
-            <button id="btn" onsubmit="" type="submit">login</button>
+            <button id="btn"  type="submit">login</button>
         </form>
     </div>
 
 </body>
 
-
+<script src="/js/jquery.js"></script>
 <script src="/js/login.js"></script>
 
 </html>
