@@ -6,7 +6,8 @@ let classes = (classes) => document.getElementsByClassName(classes);
 let username = id("username");
 let password = id("password"),
     form = id("form"),
-    errorMsg = classes("error"),
+    errorMsgUsername = classes("error-username"),
+    errorMsgPassword = classes("error-password"),
     successIcon = classes("success-icon"),
     failureIcon = classes("failure-icon");
 
@@ -15,30 +16,27 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     if (username.value.trim() === "") {
-        errorMsg = "username can not blank";
+        errorMsgUsername = "username can not blank";
         username.style.border = "2px solid red";
-
-        $('.error-username').html(errorMsg);
-
-
     }
     else {
-
+        errorMsgUsername = "";
         username.style.border = "2px solid green";
     }
 
     if (password.value.trim() === "") {
-        errorMsg = "password can not blank";
+        errorMsgPassword = "password can not blank";
         password.style.border = "2px solid red";
-
-        $('.error-password').html(errorMsg);
-
-
     }
     else {
+        errorMsgPassword = "";
         password.style.border = "2px solid green";
 
     }
+    $('.error-username').html(errorMsgUsername);
+    $('.error-password').html(errorMsgPassword);
+
+
 
 });
 
