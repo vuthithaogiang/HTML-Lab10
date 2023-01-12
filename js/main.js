@@ -32,8 +32,12 @@ let engine = (id, serial, message) => {
         successIcon[serial].style.opacity ="0";
     }
     else{
+        id.style.border = "2px solid green";
+
         errorMsg[serial].style.opacity ="0";
         successIcon[serial].style.opacity ="1";
+        failureIcon[serial].style.opacity = "0";
+
     }
 
 };
