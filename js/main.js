@@ -12,43 +12,42 @@ failureIcon = classes("failure-icon");
 
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
-    engine(username, 0, "Username cannot be blank");
-    engine(email, 1, "Email cannot be blank");
-    engine(password, 2, "Password cannot be blank");
+    engine(username, 0, "username can not be blank");
+    engine(email, 1, "email can not be blank");
+    engine(password, 2, "password can not be blank");
+
+
     formValidation();
     
-    
-
 });
 
 
-
 let engine = (id, serial, message) => {
-    if( id.value.trim() === ""){
-        errorMsg[serial].innnerHTML = message;
+
+    if(id.value.trim() ===""){
+        errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";
 
         failureIcon[serial].style.opacity = "1";
-        successIcon[serial].style.opacity = "0";
+        successIcon[serial].style.opacity ="0";
     }
     else{
-        errorMsg[serial].style.opacity= "0";
-        successIcon[serial].style.opacity= "1";
-
+        errorMsg[serial].style.opacity ="0";
+        successIcon[serial].style.opacity ="1";
     }
+
 };
 
 let formValidation = () => {
-    if(username.value === "" || email.value === "" || password.value === "" ){
-        console.log('failure');
-    }
-    else{
+    if(username.value.trim()  !== "" && email.value.trim() !== "" && password.value.trim() !== "" ){
         console.log('success');
         accceptData();
-       
 
+    }else{
+        console.log('failure');
     }
-}
+    
+};
 
 
 
@@ -63,7 +62,7 @@ let accceptData = () => {
     });
     localStorage.setItem("data", JSON.stringify(data));
     console.log(data);
-    moveLogIn();
+    //moveLogIn();
     
 };
 
