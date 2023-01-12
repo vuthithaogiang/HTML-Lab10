@@ -4,31 +4,41 @@ let id = (id) => document.getElementById(id);
 let classes = (classes) => document.getElementsByClassName(classes);
 
 let username = id("username");
-let password = id("password"), 
-form = id("form"),
-errorMsg = classes("error"),
-successIcon = classes("success-icon"),
-failureIcon = classes("failure-icon");
+let password = id("password"),
+    form = id("form"),
+    errorMsg = classes("error"),
+    successIcon = classes("success-icon"),
+    failureIcon = classes("failure-icon");
 
-form.addEventListener("submit", (e) =>{
+form.addEventListener("submit", (e) => {
 
     e.preventDefault();
-    engine(username, 0, "Username cannot be blank");
-    engine(password, 1, "Password cannot be blank");
+
+    if (username.value.trim() === "") {
+        errorMsg = "username can not blank";
+        username.style.border = "2px solid red";
+
+        $('.error-username').html(errorMsg);
+
+
+    }
+    else {
+
+        username.style.border = "2px solid green";
+    }
+
+    if (password.value.trim() === "") {
+        errorMsg = "password can not blank";
+        password.style.border = "2px solid red";
+
+        $('.error-password').html(errorMsg);
+
+
+    }
+    else {
+        password.style.border = "2px solid green";
+
+    }
 
 });
-
-let engine = (id, serial, message) => {
-    if( id.value.trim() === ""){
-        errorMsg[serial].innnerHTML = message;
-        id.style.border = "2px solid red";
-
-        failureIcon[serial].style.opacity = "1";
-        successIcon[serial].style.opacity = "0";
-    }
-    else{
-        errorMsg[serial].style.opacity= "0";
-        successIcon[serial].style.opacity= "1";
-    }
-};
 
